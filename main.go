@@ -31,6 +31,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	name, country, temp := weather.Location.Name,weather.Location.Country,weather.Current.TempC
-	fmt.Printf("Name: %s  Country: %s  Temparature: %.1f\n",name,country,temp)
+	fmt.Printf("Temparature Update:\nCountry: %s, %s\n",weather.Location.Name,weather.Location.Country)
+	fmt.Printf("Time: %s\nTemparature: %0.1f, Feels Like %0.1f\nHumidity: %d\nCondition: %s\n",
+	weather.Current.LastTimeUpdate,weather.Current.TempC,
+	weather.Current.FeelsLikeC,weather.Current.Humidity,
+	weather.Current.Condition.Text)
 }
